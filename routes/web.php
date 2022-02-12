@@ -20,6 +20,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//--------------Admin Routes---------------------//
+Route::group(['namespace' => 'Admin','prefix' => 'admin'],function(){
+
+Route::get('/products','ProductController@index')->name('view products');
+Route::get('/products/create','ProductController@create')->name('view products');
+
+});
+//-----------------------------------------------//
+
+
+
+
+
 Route::get('/content', function () {
     return view('admin.content');
 });

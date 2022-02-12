@@ -123,3 +123,4 @@
             @include('layouts.admin.menu')
                 @yield('admin.content')
             @include('layouts.admin.footer')
+            @stack('custom-scripts')
